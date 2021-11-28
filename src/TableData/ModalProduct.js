@@ -3,7 +3,7 @@ import React, { useState} from "react";
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import $ from "jquery";
+
 
 
 export default function ModalProduct({product,ishow=false, Close, Show}){
@@ -19,7 +19,7 @@ export default function ModalProduct({product,ishow=false, Close, Show}){
     const [productPrice, setProductPrice] = useState(product.price);
     const [productQuantity, setProductQuantity] = useState(product.quantity);
 
-    const endPoint = "http://basic-product-manager-reactjs.herokuapp.com/products"
+    const endPoint = "https://basic-product-manager-reactjs.herokuapp.com/products"
 
     const handleClose = () => {Close(); setShow(false);}
     const handleShow = () => {Show(); setShow(true);}
@@ -42,7 +42,7 @@ export default function ModalProduct({product,ishow=false, Close, Show}){
                  productDescription : productDescription})
           }).then(data => {
             data.json();
-            if(data.status == 200){
+            if(data.status === 200){
               window.location.reload();
             }
           })

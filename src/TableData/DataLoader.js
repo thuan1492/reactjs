@@ -1,9 +1,5 @@
 import React, { useState} from "react";
 
-
-import $ from "jquery";
-
-
 export default function ProductLoaderData({product, onClick}){
     
    
@@ -14,7 +10,7 @@ export default function ProductLoaderData({product, onClick}){
     const [productPrice, setProductPrice] = useState(product.price);
     const [productQuantity, setProductQuantity] = useState(product.quantity);
 
-    const endPoint = "http://basic-product-manager-reactjs.herokuapp.com/products"
+    const endPoint = "https://basic-product-manager-reactjs.herokuapp.com/products"
 
     return(
         

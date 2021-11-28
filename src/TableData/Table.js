@@ -1,26 +1,23 @@
 import React, {useState, useEffect } from 'react';
 import DataLoader from "./DataLoader";
 
-//Bootstrap and jQuery libraries
-
-
 
 //Datatable Modules
 import "datatables.net-dt/js/dataTables.dataTables"
 import "datatables.net-dt/css/jquery.dataTables.min.css"
 import $ from 'jquery'; 
 import ModalProduct from './ModalProduct';
-import ModalHeader from 'react-bootstrap/esm/ModalHeader';
+
 
 export default function Table () {
 
  const [selectrow, setSelectRow] = useState(-1);
  const [data, setData] = useState([]);
- const endPoint = "http://basic-product-manager-reactjs.herokuapp.com/products"
+ const endPoint = "https://basic-product-manager-reactjs.herokuapp.com/products"
+ 
  useEffect(() => {
       //initialize datatable
-    
-    
+
    
     fetch(endPoint)
      .then(response => response.json())
@@ -67,7 +64,7 @@ export default function Table () {
             </tfoot>
         </table>  
         {data.map((el) => (
-           (el.id==selectrow) && (<ModalProduct product={el} ishow={true} Close={()=>setSelectRow(-1)}/>)))}
+           (el.id===selectrow) && (<ModalProduct product={el} ishow={true} Close={()=>setSelectRow(-1)}/>)))}
         </div>
       </div>
   );
