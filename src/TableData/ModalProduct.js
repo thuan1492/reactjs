@@ -65,21 +65,25 @@ export default function ModalProduct({product,ishow=false, Close, Show}){
             <Form.Group className="mb-3" controlId="productName">
               <Form.Label>Product Name</Form.Label>
               <Form.Control required value={productName} type="text" placeholder="Enter product name" onChange={e => setProductName(e.target.value)}/>
+              <Form.Control.Feedback type="invalid">  Please enter product Name. </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="productPrice">
               <Form.Label>Product Price</Form.Label>
               <Form.Control required type="number" value={productPrice} placeholder="Enter product price"  onChange={e => setProductPrice(e.target.value)} />
+              <Form.Control.Feedback type="invalid">  Please enter product price in number. </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="productQuantity">
               <Form.Label>Product Quantity</Form.Label>
               <Form.Control required type="number" value={productQuantity} placeholder="Enter product quantity"  onChange={e => setProductQuantity(e.target.value)}/>
+              <Form.Control.Feedback type="invalid">  Please enter product quantity in number. </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="productDescription">
               <Form.Label>Product Description</Form.Label>
               <Form.Control required type="text" value={productDescription} placeholder="Enter product description"  onChange={e => setProductDescription(e.target.value)}/>
+              <Form.Control.Feedback type="invalid">  Please enter some Description of product. </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="productType">
